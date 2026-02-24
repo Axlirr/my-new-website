@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axlirr Agency OS — Leads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="leads">
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="logo">AX</div><div><h1>Axlirr Agency OS</h1><p>Lead pipeline</p></div></div>
+      <nav class="nav">
+        <a href="./index.html" data-page="overview">Overview</a>
+        <a href="./agents.html" data-page="agents">Agents</a>
+        <a href="./leads.html" data-page="leads">Leads</a>
+        <a href="./tasks.html" data-page="tasks">Tasks</a>
+        <a href="./comms.html" data-page="comms">Comms Board</a>
+        <a href="./settings.html" data-page="settings">Settings</a>
+      </nav>
+      <div class="sidebar-stats" id="sidebarStats"></div>
+      <p class="muted" id="lastSaved">Last saved: —</p>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="title-wrap"><h2 id="topTitle">Leads</h2><p>Add, update, and manage your outreach pipeline.</p></div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰ Menu</button>
+      </header>
+
+      <section class="card">
+        <h3 class="section-title">Add Lead</h3>
+        <form id="leadForm" class="form-grid">
+          <input id="leadCompany" placeholder="Company" required />
+          <input id="leadRole" placeholder="Hiring role" required />
+          <input id="leadContact" placeholder="Email / phone" required />
+          <select id="leadStage">
+            <option>New</option>
+            <option>Contacted</option>
+            <option>Replied</option>
+            <option>Booked</option>
+          </select>
+          <button type="submit">Add Lead</button>
+        </form>
+      </section>
+
+      <section class="card" style="margin-top:10px;">
+        <h3 class="section-title">Lead Table</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Company</th><th>Role</th><th>Contact</th><th>Stage</th><th>Action</th></tr></thead>
+            <tbody id="leadTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
