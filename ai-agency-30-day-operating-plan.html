@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agency 30-Day Operating Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffaf2;
+      --surface: #ffffff;
+      --surface-2: #f6efe4;
+      --border: rgba(60, 40, 20, 0.14);
+      --text: #1d1a16;
+      --text-dim: #5d5448;
+      --accent: #b45309;
+      --accent-2: #7c3aed;
+      --ok: #0f766e;
+      --warn: #b91c1c;
+      --shadow: 0 10px 30px rgba(60, 35, 15, 0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111015;
+        --surface: #1a1820;
+        --surface-2: #23202d;
+        --border: rgba(255,255,255,0.12);
+        --text: #f4f1ea;
+        --text-dim: #b8b0a4;
+        --accent: #f59e0b;
+        --accent-2: #a78bfa;
+        --ok: #34d399;
+        --warn: #f87171;
+        --shadow: 0 12px 35px rgba(0,0,0,.35);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(180,83,9,0.09), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(124,58,237,0.08), transparent 30%),
+        var(--bg);
+      color: var(--text);
+    }
+    .wrap { max-width: 1200px; margin: 24px auto; padding: 0 14px; }
+    .hero {
+      background: linear-gradient(140deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0 0 8px; font-size: 34px; }
+    h2 { margin: 0 0 10px; font-size: 24px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    p { margin: 0; color: var(--text-dim); }
+    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+    .kpi {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+      background: rgba(255,255,255,0.03);
+    }
+    .kpi .v { font-size: 22px; font-weight: 700; }
+    .kpi .l { font-size: 12px; color: var(--text-dim); }
+
+    .section {
+      margin-top: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    th { background: rgba(180,83,9,.12); }
+    tr:nth-child(even) { background: rgba(255,255,255,.02); }
+    tr:last-child td { border-bottom: 0; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .card { border: 1px solid var(--border); border-radius: 12px; padding: 10px; background: rgba(255,255,255,.02); min-width:0; }
+    .mono { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--text-dim); }
+    .badge { display: inline-block; border-radius: 999px; padding: 3px 8px; font-size: 11px; font-family: "IBM Plex Mono", monospace; }
+    .ok { background: rgba(15,118,110,.16); color: var(--ok); }
+    .warn { background: rgba(185,28,28,.14); color: var(--warn); }
+    ul { margin: 6px 0 0 18px; font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--text-dim); }
+
+    @media (max-width: 900px) {
+      .kpis { grid-template-columns: 1fr 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>AI Agency 30-Day Execution Plan</h1>
+      <p>Built for Arbaz’s 5-agent operating model: Outbound, Automation Builder, Web/Dev, PM/Client Success, Copy/Design.</p>
+      <div class="kpis">
+        <div class="kpi"><div class="v">30 Days</div><div class="l">Execution horizon</div></div>
+        <div class="kpi"><div class="v">5 Agents</div><div class="l">Specialized roles in parallel</div></div>
+        <div class="kpi"><div class="v">1 Board</div><div class="l">Shared inter-agent comms board</div></div>
+        <div class="kpi"><div class="v">Weekly</div><div class="l">Review + reprioritization cadence</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Week-by-Week Sprint Map</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Primary Objective</th>
+            <th>Owner Roles</th>
+            <th>Measurable Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Week 1<br/><span class="badge ok">Foundation</span></td>
+            <td>Lock ICP + offer, launch first outreach + landing flow + baseline automation blueprint.</td>
+            <td>Outbound, Copy/Design, Web/Dev, Builder</td>
+            <td>30 personalized touches, LP v1 live, blueprint v1 approved, KPI baseline captured.</td>
+          </tr>
+          <tr>
+            <td>Week 2<br/><span class="badge ok">Activation</span></td>
+            <td>Scale qualified outreach, publish proof assets, run first A/B tests, set PM SOP pack live.</td>
+            <td>All roles</td>
+            <td>80+ touches, 2 case/proof assets, 1 A/B cycle complete, client health model operational.</td>
+          </tr>
+          <tr>
+            <td>Week 3<br/><span class="badge ok">Optimization</span></td>
+            <td>Improve reply-to-booking conversion, verticalize automation packs, strengthen QA/UAT gates.</td>
+            <td>Outbound, Builder, PM, Copy/Design</td>
+            <td>Higher positive replies, v2 vertical blueprints, standardized UAT checklist, reduced blockers.</td>
+          </tr>
+          <tr>
+            <td>Week 4<br/><span class="badge ok">Scale Prep</span></td>
+            <td>Systemize playbooks, finalize recurring dashboards, set next-30-day pipeline and capacity plan.</td>
+            <td>PM + all leads</td>
+            <td>Operating handbook v1, KPI dashboard rollup, next month priorities and staffing map.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Daily Operating Rhythm (Mon–Fri)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Time Block</th>
+            <th>Action</th>
+            <th>Who</th>
+            <th>Deliverable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Start of day</td><td>Read shared comms board + unblock dependencies.</td><td>All</td><td>Updated next actions on board</td></tr>
+          <tr><td>Build block</td><td>Execute role-specific top 1 priority task.</td><td>Each role</td><td>Tangible artifact shipped</td></tr>
+          <tr><td>Midday sync</td><td>Post handoff requests to other roles.</td><td>All</td><td>Cross-role request logged</td></tr>
+          <tr><td>End of day</td><td>Update KPI signals, blockers, and next action.</td><td>All</td><td>1 concise board update per role</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Inter-Agent Communication System (Now Enabled)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Shared Board</h3>
+          <p class="mono">/home/ubuntu/.openclaw/workspace/agency-os/AGENT_COMMS_BOARD.md</p>
+          <ul>
+            <li>Every role reads before posting.</li>
+            <li>Every role posts: completed / needs / blockers / next action.</li>
+            <li>Handshake requests tagged by role.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Escalation Rules</h3>
+          <ul>
+            <li>If blocked >24h, PM/Client Success is tagged.</li>
+            <li>If blocker impacts sales pipeline, Outbound + Copy get priority.</li>
+            <li>If blocker impacts delivery quality, Builder + PM get priority.</li>
+          </ul>
+          <p class="mono">Status: <span class="badge ok">Active</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Can Command Next</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Instruction Prompt</h3>
+          <p class="mono">Role: [agent]\nObjective this week: [...]\nConstraint: [...]\nDeliver by: [...]\nSuccess KPI: [...]</p>
+        </div>
+        <div class="card">
+          <h3>Discussion Prompt</h3>
+          <p class="mono">Give me 3 options for [problem]: fastest / cheapest / highest-quality. Recommend one with rationale.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

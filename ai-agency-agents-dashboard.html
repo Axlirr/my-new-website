@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agency 5-Agent Command Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a1020; --surface:#121a2f; --surface2:#1a2542; --border:rgba(255,255,255,.12);
+      --text:#edf2ff; --muted:#a7b4d6; --a:#67e8f9; --b:#a78bfa; --ok:#34d399; --warn:#f59e0b;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:"Space Grotesk",sans-serif;color:var(--text);
+      background:radial-gradient(circle at 20% 10%, rgba(103,232,249,.12), transparent 35%),
+      radial-gradient(circle at 80% 20%, rgba(167,139,250,.12), transparent 35%), var(--bg);
+    }
+    .wrap{max-width:1200px;margin:22px auto;padding:0 14px}
+    .hero{padding:18px;border:1px solid var(--border);border-radius:16px;background:linear-gradient(150deg,var(--surface),var(--surface2));}
+    h1{margin:0 0 8px;font-size:28px} .sub{margin:0;color:var(--muted)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .kpi{border:1px solid var(--border);border-radius:10px;padding:10px;background:rgba(255,255,255,.02)}
+    .kpi .n{font-size:24px;font-weight:700}.kpi .l{font-size:12px;color:var(--muted)}
+    .section{margin-top:12px;padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+    .section h2{margin:0 0 10px;font-size:18px}
+    table{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+    th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+    th{background:rgba(103,232,249,.12)} tr:last-child td{border-bottom:0}
+    .mono{font-family:"JetBrains Mono",monospace;font-size:12px;word-break:break-all}
+    .badge{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700}
+    .ok{background:rgba(52,211,153,.16);color:var(--ok)} .warn{background:rgba(245,158,11,.16);color:var(--warn)}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .card{border:1px solid var(--border);border-radius:10px;padding:10px;background:rgba(255,255,255,.02)}
+    pre{margin:0;white-space:pre-wrap;font-family:"JetBrains Mono",monospace;font-size:12px;color:#d4def7}
+    @media(max-width:900px){.kpis,.cards{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>AI Agency Command Dashboard (5 Specialized Agents)</h1>
+      <p class="sub">Owner: Arbaz • Purpose: run outbound, build, web, PM/CS, and sales enablement in parallel.</p>
+      <div class="kpis">
+        <div class="kpi"><div class="n">5</div><div class="l">Active specialist agents created</div></div>
+        <div class="kpi"><div class="n">4/5</div><div class="l">Returned concrete artifacts so far</div></div>
+        <div class="kpi"><div class="n">Live</div><div class="l">You can issue role instructions anytime</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Agent Registry + Activity Snapshot</h2>
+      <table>
+        <thead><tr><th>Role</th><th>Status</th><th>Key output</th><th>Session Key</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Outbound Growth</strong><br/>Lead gen + experiments</td>
+            <td><span class="badge ok">Active</span></td>
+            <td>Created SG outbound playbook + 3 experiment cycle.</td>
+            <td class="mono">agent:main:subagent:cc2cc408-1dd7-4675-8075-e49439d43e50</td>
+          </tr>
+          <tr>
+            <td><strong>AI Automation Builder</strong><br/>Blueprints + implementation</td>
+            <td><span class="badge ok">Active</span></td>
+            <td>Built reusable receptionist automation blueprint library.</td>
+            <td class="mono">agent:main:subagent:a9a5bf01-e125-4baf-8c37-5a5a18d2a96e</td>
+          </tr>
+          <tr>
+            <td><strong>Web/Dev Portfolio</strong><br/>Site + funnel optimization</td>
+            <td><span class="badge ok">Active</span></td>
+            <td>Initialized conversion backlog (prioritized execution).</td>
+            <td class="mono">agent:main:subagent:b9abe7c8-10ed-4aa7-a279-405f60f9267b</td>
+          </tr>
+          <tr>
+            <td><strong>PM + Client Success</strong><br/>Onboarding, SOPs, retention</td>
+            <td><span class="badge ok">Active</span></td>
+            <td>Delivered lifecycle SOP + client health dashboard spec.</td>
+            <td class="mono">agent:main:subagent:1b5db293-fb63-48aa-855c-98f5c41dd5af</td>
+          </tr>
+          <tr>
+            <td><strong>Copy + Design Sales Enablement</strong><br/>Offer + outreach assets</td>
+            <td><span class="badge ok">Active</span></td>
+            <td>Delivered message framework + email pack + follow-ups.</td>
+            <td class="mono">agent:main:subagent:a9350ca9-1806-44fe-a032-35b403af9ae6</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>How to Give Instructions / Start Discussions</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Instruction template</h3>
+          <pre>Role: [agent role]
+Objective this week: [target outcome]
+Constraints: [budget/time/tools]
+Deliver by: [date]
+Output format: [bullet list / doc / csv / html]
+Success metric: [KPI]</pre>
+        </div>
+        <div class="card">
+          <h3>Discussion template</h3>
+          <pre>I need options for [problem].
+Give me:
+1) fastest route
+2) cheapest route
+3) highest quality route
+Then recommend 1 and explain why.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Commanding Structure (Recommended)</h2>
+      <pre>Daily (15 min):
+- Outbound: report experiments + next actions
+- Builder: report build blockers + deployment queue
+- Web: report conversion improvements planned/shipped
+- PM/CS: report account health risks
+- Copy/Design: report winning messaging assets
+
+Weekly (45 min):
+- Merge all outputs into one execution plan
+- Decide top 3 priorities for next week
+- Reassign tasks by capacity and urgency</pre>
+    </section>
+  </div>
+</body>
+</html>
